@@ -1,7 +1,8 @@
 import React from "react";
 import * as z from "zod";
+import COMMON_TOP_BG from "./static/CommonSlideTopBackgroundImage.jpg";
 
-const TOP_BG_URL = "/CommonSlideTopBackgroundImage.jpg";
+const TOP_BG_URL = COMMON_TOP_BG;
 
 export const layoutId = "common-content-slide";
 export const layoutName = "Common Content Slide";

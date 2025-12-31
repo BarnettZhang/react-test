@@ -1,9 +1,12 @@
 import React from "react";
 import * as z from "zod";
+import INTRO_BG from "./static/IntroBackgroundImage.jpg";
+import INTRO_TOP_LEFT from "./static/IntroTopLeftLogo.png";
+import INTRO_TOP_RIGHT from "./static/IntroTopRightLogo.png";
 
-const BG_URL = "/IntroBackgroundImage.jpg";
-const TOP_LEFT_LOGO_URL = "/IntroTopLeftLogo.png";
-const TOP_RIGHT_LOGO_URL = "/IntroTopRightLogo.png";
+const BG_URL = INTRO_BG;
+const TOP_LEFT_LOGO_URL = INTRO_TOP_LEFT;
+const TOP_RIGHT_LOGO_URL = INTRO_TOP_RIGHT;
 
 export const layoutId = "general-intro-slide";
 export const layoutName = "Intro Slide";
