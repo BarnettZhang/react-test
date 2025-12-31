@@ -3,12 +3,12 @@ import * as z from "zod";
 
 const TOP_BG_URL = "/CommonSlideTopBackgroundImage.jpg";
 
-export const layoutId = "general-intro-slide";
-export const layoutName = "Intro Slide";
+export const layoutId = "common-content-slide";
+export const layoutName = "Common Content Slide";
 export const layoutDescription =
-  "A clean slide layout with title, description text, presenter info, and a supporting image.";
+  "A clean slide layout with title, subtitle, and content.";
 
-const introSlideSchema = z.object({
+const commonSlideSchema = z.object({
   title: z.string().min(3).max(40).default("工作汇报模板").meta({
     description: "Main title of the slide",
   }),
@@ -23,19 +23,19 @@ const introSlideSchema = z.object({
       "一是月末，我行全口径授信业务总量万亿元，比上月增加亿元。其中表内贷款增长乏力，比上月增加亿元。二是不良贷款比上月双升，问题贷款和逾期贷款比上月继续双降。月末不良余额亿，比上月增加亿，不良率%，比上月上升个百分点。问题贷款余额亿元，比上月下降亿元。逾期贷款余额亿元，比上月下降亿元。"
     )
     .meta({
-      description: "Name of the presenter",
+      description: "Content of the slide",
     }),
 });
 
-export const Schema = introSlideSchema;
+export const Schema = commonSlideSchema;
 
-export type IntroSlideData = z.infer<typeof introSlideSchema>;
+export type IntroSlideData = z.infer<typeof commonSlideSchema>;
 
 interface IntroSlideLayoutProps {
   data?: Partial<IntroSlideData>;
 }
 
-const IntroSlideLayout: React.FC<IntroSlideLayoutProps> = ({
+const CommonSlideLayout: React.FC<IntroSlideLayoutProps> = ({
   data: slideData,
 }) => {
   return (
@@ -63,4 +63,4 @@ const IntroSlideLayout: React.FC<IntroSlideLayoutProps> = ({
   );
 };
 
-export default IntroSlideLayout;
+export default CommonSlideLayout;
