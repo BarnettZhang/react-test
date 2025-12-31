@@ -52,13 +52,13 @@ const IntroSlideLayout: React.FC<IntroSlideLayoutProps> = ({
           alt="IntroTopRightLogo"
         />
         {/* Title */}
-        <div className="absolute left-[7%] top-[38%] text-[44px] font-bold text-left text-black">
+        <div className="absolute left-[7%] top-[38%] text-[44pt] font-bold text-left text-black">
           {slideData?.title || "工作汇报模板"}
         </div>
-        <div className="absolute left-[7%] top-[50%] text-[28px] font-[400] text-left text-black">
+        <div className="absolute left-[7%] top-[50%] text-[28pt] font-[400] text-left text-black">
           {slideData?.presenterName || "财务会计部"}
         </div>
-        <div className="absolute left-[7%] bottom-[15%] text-[20px] font-[400] text-left text-black">
+        <div className="absolute left-[7%] bottom-[15%] text-[20pt] font-[400] text-left text-black">
           {slideData?.presentationDate || "2022年x月"}
         </div>
       </div>
