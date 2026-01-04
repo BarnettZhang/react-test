@@ -1,8 +1,7 @@
 import React from "react";
 import * as z from "zod";
-import COMMON_TOP_BG from "./static/CommonSlideTopBackgroundImage.jpg";
 
-const TOP_BG_URL = COMMON_TOP_BG;
+const TOP_BG_URL = "/CommonSlideTopBackgroundImage.jpg";
 
 export const layoutId = "common-content-slide";
 export const layoutName = "Common Content Slide";
@@ -30,18 +29,18 @@ const commonSlideSchema = z.object({
 
 export const Schema = commonSlideSchema;
 
-export type IntroSlideData = z.infer<typeof commonSlideSchema>;
+export type CommonSlideData = z.infer<typeof commonSlideSchema>;
 
-interface IntroSlideLayoutProps {
-  data?: Partial<IntroSlideData>;
+interface CommonSlideLayoutProps {
+  data?: Partial<CommonSlideData>;
 }
 
-const CommonSlideLayout: React.FC<IntroSlideLayoutProps> = ({
+const CommonSlideLayout: React.FC<CommonSlideLayoutProps> = ({
   data: slideData,
 }) => {
   return (
     <>
-      <div className='relative w-full rounded-sm max-w-[1280px] shadow-lg max-h-[720px] aspect-video bg-cover bg-center z-20 mx-auto overflow-hidden font-["KaiTi","STKaiti","KaiTi_GB2312","Kai","DFKai-SB","serif"]'>
+      <div className='relative w-full rounded-sm max-w-[1280px] shadow-lg max-h-[720px] aspect-video bg-cover bg-white bg-center z-20 mx-auto overflow-hidden font-["楷体\_GB2312","楷体","Kai","DFKai-SB","serif"]'>
         <img
           className="absolute top-0 left-0 w-full"
           src={TOP_BG_URL}

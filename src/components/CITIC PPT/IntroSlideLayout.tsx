@@ -1,12 +1,9 @@
 import React from "react";
 import * as z from "zod";
-import INTRO_BG from "./static/IntroBackgroundImage.jpg";
-import INTRO_TOP_LEFT from "./static/IntroTopLeftLogo.png";
-import INTRO_TOP_RIGHT from "./static/IntroTopRightLogo.png";
 
-const BG_URL = INTRO_BG;
-const TOP_LEFT_LOGO_URL = INTRO_TOP_LEFT;
-const TOP_RIGHT_LOGO_URL = INTRO_TOP_RIGHT;
+const BG_URL = "/IntroBackgroundImage.jpg";
+const TOP_LEFT_LOGO_URL = "/IntroTopLeftLogo.png";
+const TOP_RIGHT_LOGO_URL = "/IntroTopRightLogo.png";
 
 export const layoutId = "general-intro-slide";
 export const layoutName = "Intro Slide";
@@ -40,7 +37,7 @@ const IntroSlideLayout: React.FC<IntroSlideLayoutProps> = ({
   return (
     <>
       <div
-        className='relative w-full rounded-sm max-w-[1280px] shadow-lg max-h-[720px] aspect-video bg-cover bg-center z-20 mx-auto overflow-hidden font-["KaiTi","STKaiti","KaiTi_GB2312","Kai","DFKai-SB","serif"]'
+        className='relative w-full rounded-sm max-w-[1280px] shadow-lg max-h-[720px] aspect-video bg-cover bg-white bg-center z-20 mx-auto overflow-hidden font-["楷体\_GB2312","楷体","Kai","DFKai-SB","serif"]'
         style={{ backgroundImage: `url('${BG_URL}')` }}
       >
         <img

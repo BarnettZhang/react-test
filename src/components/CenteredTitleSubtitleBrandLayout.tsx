@@ -1,6 +1,6 @@
 import React from "react";
 import * as z from "zod";
-import { ImageSchema, IconSchema } from "./defaultSchemes";
+import { ImageSchema, IconSchema } from "./CITIC PPT/defaultSchemes";
 
 export const layoutId = "centered-title-subtitle-brand-slide";
 export const layoutName = "CenteredTitleSubtitleBrandLayout";

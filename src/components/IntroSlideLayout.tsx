@@ -1,6 +1,6 @@
 import React from "react";
 import * as z from "zod";
-import { ImageSchema } from "./defaultSchemes";
+import { ImageSchema } from "./CITIC PPT/defaultSchemes";
 
 export const layoutId = "general-intro-slide";
 export const layoutName = "Intro Slide";
