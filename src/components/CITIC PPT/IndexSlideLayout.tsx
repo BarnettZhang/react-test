@@ -46,12 +46,12 @@ const IndexSlideLayout: React.FC<IndexSlideLayoutProps> = ({
           <div className="text-[32pt] text-center font-bold text-black">
             目录
           </div>
-          <div className="text-[20pt] text-center font-bold text-black">
+          <div className='text-[20pt] text-center font-bold text-black font-["Helvetica"]'>
             CONTENT
           </div>
         </div>
 
-        <div className="m-auto pl-[35%]">
+        <div className="m-auto pl-[35%] pb-[10%]">
           {slideData?.index?.map((index, i) => (
             <div className="text-left text-[20pt] mb-[10pt]">
               {i + 1 < 10 ? `0${i + 1}` : i + 1} {index}
