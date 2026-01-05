@@ -1,7 +1,7 @@
 import React from "react";
 import * as z from "zod";
 
-const TOP_BG_URL = "/CommonSlideWithTwoBlocksTopBackgroundImage.jpg";
+const TOP_BG_URL = "/CommonSlideTopBackgroundImage.jpg";
 
 export const layoutId = "common-content-with-two-blocks-slide";
 export const layoutName = "Common Content With Two Blocks Slide";
@@ -56,7 +56,7 @@ const CommonSlideWithTwoBlocksLayout: React.FC<
         <img
           className="absolute top-0 left-0 w-full"
           src={TOP_BG_URL}
-          alt="CommonSlideWithTwoBlocksTopBackgroundImage"
+          alt="CommonSlideTopBackgroundImage"
         />
         {/* Title */}
         <div className="absolute left-[5%] top-[3%] text-[24pt] font-bold text-left text-black">
