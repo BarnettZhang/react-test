@@ -2,9 +2,7 @@ import React from "react";
 import * as z from "zod";
 import { ImageSchema } from "./defaultSchemes";
 
-const TOP_RIGHT_LOGO_URL = "/CommonTopRightLogo.png";
-const BOTTOM_BG_URL = "/BottomWaveBackgroundImage.jpg";
-const LEFT_BG_URL = "/GreyBackgroundImage.png";
+const BG_URL = "/CommonSlideWithImageBackground.png";
 
 export const layoutId = "common-content-with-image-slide";
 export const layoutName = "Common Content With Image Slide";
@@ -52,23 +50,10 @@ const CommonSlideWithImageLayout: React.FC<CommonSlideWithImageLayoutProps> = ({
 }) => {
   return (
     <>
-      <div className='relative w-full rounded-sm max-w-[1280px] shadow-lg max-h-[720px] aspect-video bg-white bg-cover bg-center z-20 mx-auto overflow-hidden font-["楷体\_GB2312","楷体","Kai","DFKai-SB","serif"]'>
-        <img
-          className="absolute top-[2.5%] right-[2.5%] h-[7.5%]"
-          src={TOP_RIGHT_LOGO_URL}
-          alt="CommonTopRightLogo"
-        />
-        <img
-          className="bottom-0 left-0 w-full z-30 absolute"
-          src={BOTTOM_BG_URL}
-          alt="BottomWaveBackgroundImage"
-        />
-        <img
-          className="left-0 top-0 h-full w-[50%] z-50 absolute"
-          src={LEFT_BG_URL}
-          alt="GreyBackgroundImage"
-        />
-
+      <div
+        className='relative w-full rounded-sm max-w-[1280px] shadow-lg max-h-[720px] aspect-video bg-white bg-cover bg-center z-20 mx-auto overflow-hidden font-["楷体\_GB2312","楷体","Kai","DFKai-SB","serif"]'
+        style={{ backgroundImage: `url('${BG_URL}')` }}
+      >
         {/* Title */}
         <div className="absolute left-[5%] top-[3%] text-[24pt] font-bold text-left text-black z-60">
           {slideData?.title || "工作汇报模板"}

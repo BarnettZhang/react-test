@@ -1,8 +1,7 @@
 import React from "react";
 import * as z from "zod";
 
-const LEFT_BG_URL = "/GreyBackgroundImage.png";
-const BOTTOM_BG_URL = "/BottomWaveBackgroundImage.jpg";
+const INDEX_SLIDE_BG_URL = "/IndexSlideBackgroundImage.png";
 
 export const layoutId = "index-content-slide";
 export const layoutName = "Index Content Slide";
@@ -30,19 +29,11 @@ const IndexSlideLayout: React.FC<IndexSlideLayoutProps> = ({
 }) => {
   return (
     <>
-      <div className='relative flex w-full rounded-sm max-w-[1280px] shadow-lg max-h-[720px] aspect-video bg-cover bg-white bg-center z-20 mx-auto overflow-hidden font-["楷体\_GB2312","楷体","Kai","DFKai-SB","serif"]'>
-        <img
-          className="left-0 top-0 h-full z-50 absolute"
-          src={LEFT_BG_URL}
-          alt="GreyBackgroundImage"
-        />
-        <img
-          className="bottom-0 left-0 w-full z-30 absolute"
-          src={BOTTOM_BG_URL}
-          alt="BottomWaveBackgroundImage"
-        />
-
-        <div className="absolute top-[20%] left-[12%] z-60">
+      <div
+        className='relative flex w-full rounded-sm max-w-[1280px] shadow-lg max-h-[720px] aspect-video bg-cover bg-white bg-center z-20 mx-auto overflow-hidden font-["楷体\_GB2312","楷体","Kai","DFKai-SB","serif"]'
+        style={{ backgroundImage: `url('${INDEX_SLIDE_BG_URL}')` }}
+      >
+        <div className="absolute top-[20%] left-[12%]">
           <div className="text-[32pt] text-center font-bold text-black">
             目录
           </div>
