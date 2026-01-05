@@ -1,14 +1,14 @@
 import React from "react";
 import * as z from "zod";
 
-const TOP_BG_URL = "/CommonSlideTopBackgroundImage.jpg";
+const TOP_BG_URL = "/CommonSlideWithTwoBlocksTopBackgroundImage.jpg";
 
-export const layoutId = "common-content-slide";
-export const layoutName = "Common Content Slide";
+export const layoutId = "common-content-with-two-blocks-slide";
+export const layoutName = "Common Content With Two Blocks Slide";
 export const layoutDescription =
-  "A clean slide layout with title, subtitle, and content.";
+  "A clean slide layout with title, subtitle, and two blocks of content.";
 
-const commonSlideSchema = z.object({
+const CommonSlideWithTwoBlocksSchema = z.object({
   title: z.string().min(3).max(40).default("工作汇报模板").meta({
     description: "Main title of the slide",
   }),
@@ -37,24 +37,26 @@ const commonSlideSchema = z.object({
     }),
 });
 
-export const Schema = commonSlideSchema;
+export const Schema = CommonSlideWithTwoBlocksSchema;
 
-export type CommonSlideData = z.infer<typeof commonSlideSchema>;
+export type CommonSlideWithTwoBlocksData = z.infer<
+  typeof CommonSlideWithTwoBlocksSchema
+>;
 
-interface CommonSlideLayoutProps {
-  data?: Partial<CommonSlideData>;
+interface CommonSlideWithTwoBlocksLayoutProps {
+  data?: Partial<CommonSlideWithTwoBlocksData>;
 }
 
-const CommonSlideLayout: React.FC<CommonSlideLayoutProps> = ({
-  data: slideData,
-}) => {
+const CommonSlideWithTwoBlocksLayout: React.FC<
+  CommonSlideWithTwoBlocksLayoutProps
+> = ({ data: slideData }) => {
   return (
     <>
       <div className='relative w-full rounded-sm max-w-[1280px] shadow-lg max-h-[720px] aspect-video bg-cover bg-white bg-center z-20 mx-auto overflow-hidden font-["楷体\_GB2312","楷体","Kai","DFKai-SB","serif"]'>
         <img
           className="absolute top-0 left-0 w-full"
           src={TOP_BG_URL}
-          alt="CommonSlideTopBackgroundImage"
+          alt="CommonSlideWithTwoBlocksTopBackgroundImage"
         />
         {/* Title */}
         <div className="absolute left-[5%] top-[3%] text-[24pt] font-bold text-left text-black">
@@ -78,4 +80,4 @@ const CommonSlideLayout: React.FC<CommonSlideLayoutProps> = ({
   );
 };
 
-export default CommonSlideLayout;
+export default CommonSlideWithTwoBlocksLayout;
