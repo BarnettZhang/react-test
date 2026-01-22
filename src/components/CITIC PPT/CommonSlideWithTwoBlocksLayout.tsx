@@ -12,36 +12,44 @@ const CommonSlideWithTwoBlocksSchema = z.object({
   title: z.string().min(3).max(40).default("工作汇报模板").meta({
     description: "Main title of the slide",
   }),
-  leftContent: z.object({
-    title: z.string().min(3).max(40).default("工作汇报模板").meta({
-      description: "Title of the left content",
-    }),
-    content: z
-      .string()
-      .min(2)
-      .max(500)
-      .default(
-        "一是月末，我行全口径授信业务总量万亿元，比上月增加亿元。其中表内贷款增长乏力，比上月增加亿元。二是不良贷款比上月双升，问题贷款和逾期贷款比上月继续双降。月末不良余额亿，比上月增加亿，不良率%，比上月上升个百分点。问题贷款余额亿元，比上月下降亿元。逾期贷款余额亿元，比上月下降亿元。",
-      )
-      .meta({
-        description: "Left content of the slide",
+  leftContent: z
+    .object({
+      title: z.string().min(3).max(40).default("工作汇报模板").meta({
+        description: "Title of the left content",
       }),
-  }),
-  rightContent: z.object({
-    title: z.string().min(3).max(40).default("工作汇报模板").meta({
-      description: "Title of the right content",
+      content: z
+        .string()
+        .min(2)
+        .max(500)
+        .default(
+          "一是月末，我行全口径授信业务总量万亿元，比上月增加亿元。其中表内贷款增长乏力，比上月增加亿元。二是不良贷款比上月双升，问题贷款和逾期贷款比上月继续双降。月末不良余额亿，比上月增加亿，不良率%，比上月上升个百分点。问题贷款余额亿元，比上月下降亿元。逾期贷款余额亿元，比上月下降亿元。",
+        )
+        .meta({
+          description: "Left content of the slide",
+        }),
+    })
+    .meta({
+      description: "Left content of the slide",
     }),
-    content: z
-      .string()
-      .min(2)
-      .max(500)
-      .default(
-        "一是月末，我行全口径授信业务总量万亿元，比上月增加亿元。其中表内贷款增长乏力，比上月增加亿元。二是不良贷款比上月双升，问题贷款和逾期贷款比上月继续双降。月末不良余额亿，比上月增加亿，不良率%，比上月上升个百分点。问题贷款余额亿元，比上月下降亿元。逾期贷款余额亿元，比上月下降亿元。",
-      )
-      .meta({
-        description: "Right content of the slide",
+  rightContent: z
+    .object({
+      title: z.string().min(3).max(40).default("工作汇报模板").meta({
+        description: "Title of the right content",
       }),
-  }),
+      content: z
+        .string()
+        .min(2)
+        .max(500)
+        .default(
+          "一是月末，我行全口径授信业务总量万亿元，比上月增加亿元。其中表内贷款增长乏力，比上月增加亿元。二是不良贷款比上月双升，问题贷款和逾期贷款比上月继续双降。月末不良余额亿，比上月增加亿，不良率%，比上月上升个百分点。问题贷款余额亿元，比上月下降亿元。逾期贷款余额亿元，比上月下降亿元。",
+        )
+        .meta({
+          description: "Right content of the slide",
+        }),
+    })
+    .meta({
+      description: "Right content of the slide",
+    }),
 });
 
 export const Schema = CommonSlideWithTwoBlocksSchema;
