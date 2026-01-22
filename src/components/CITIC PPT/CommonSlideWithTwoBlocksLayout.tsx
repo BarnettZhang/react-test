@@ -14,38 +14,32 @@ const CommonSlideWithTwoBlocksSchema = z.object({
   }),
   leftContent: z
     .object({
-      title: z.string().min(3).max(40).default("工作汇报模板").meta({
-        description: "Title of the left content",
+      subtitle: z.string().min(3).max(40).meta({
+        description: "Subtitle of the left content",
       }),
-      content: z
-        .string()
-        .min(2)
-        .max(500)
-        .default(
-          "一是月末，我行全口径授信业务总量万亿元，比上月增加亿元。其中表内贷款增长乏力，比上月增加亿元。二是不良贷款比上月双升，问题贷款和逾期贷款比上月继续双降。月末不良余额亿，比上月增加亿，不良率%，比上月上升个百分点。问题贷款余额亿元，比上月下降亿元。逾期贷款余额亿元，比上月下降亿元。",
-        )
-        .meta({
-          description: "Left content of the slide",
-        }),
+      content: z.string().min(2).max(500).meta({
+        description: "Left content of the slide",
+      }),
+    })
+    .default({
+      subtitle: "工作汇报模板",
+      content: "左内容",
     })
     .meta({
       description: "Left content of the slide",
     }),
   rightContent: z
     .object({
-      title: z.string().min(3).max(40).default("工作汇报模板").meta({
-        description: "Title of the right content",
+      subtitle: z.string().min(3).max(40).meta({
+        description: "Subtitle of the right content",
       }),
-      content: z
-        .string()
-        .min(2)
-        .max(500)
-        .default(
-          "一是月末，我行全口径授信业务总量万亿元，比上月增加亿元。其中表内贷款增长乏力，比上月增加亿元。二是不良贷款比上月双升，问题贷款和逾期贷款比上月继续双降。月末不良余额亿，比上月增加亿，不良率%，比上月上升个百分点。问题贷款余额亿元，比上月下降亿元。逾期贷款余额亿元，比上月下降亿元。",
-        )
-        .meta({
-          description: "Right content of the slide",
-        }),
+      content: z.string().min(2).max(500).meta({
+        description: "Right content of the slide",
+      }),
+    })
+    .default({
+      subtitle: "工作汇报模板",
+      content: "右内容",
     })
     .meta({
       description: "Right content of the slide",
@@ -85,7 +79,7 @@ const CommonSlideWithTwoBlocksLayout: React.FC<
                 <span className="inline-flex rounded-full bg-white text-[#b02418] px-[5px] py-[3px] mr-[5px]">
                   01
                 </span>
-                {slideData?.leftContent?.title || "左标题"}
+                {slideData?.leftContent?.subtitle || "左标题"}
               </div>
               <div
                 className="w-full text-[14pt] font-[400] z-[30] bg-[#f2f2f2] py-[40px] px-[20px] absolute top-[25px]"
@@ -99,7 +93,7 @@ const CommonSlideWithTwoBlocksLayout: React.FC<
                 <span className="inline-flex rounded-full bg-white text-[#b02418] px-[5px] py-[3px] mr-[5px]">
                   02
                 </span>
-                {slideData?.rightContent?.title || "右标题"}
+                {slideData?.rightContent?.subtitle || "右标题"}
               </div>
               <div
                 className="w-full text-[14pt] font-[400] z-[30] bg-[#f2f2f2] py-[40px] px-[20px] absolute top-[25px]"
@@ -127,13 +121,13 @@ const CommonSlideWithTwoBlocksLayout: React.FC<
           </div>
           <div className="absolute left-[5%] top-[15%] text-left text-black w-[90%] h-[calc(100%-70px)]">
             <div className="text-[18pt] text-white bg-[#b02418] w-fit px-[20px] py-[10px] rounded-full z-[50] absolute top-0">
-              01 ｜ {slideData?.leftContent?.title || "左标题"}
+              01 ｜ {slideData?.leftContent?.subtitle || "左标题"}
             </div>
             <div className="text-[14pt] font-[400] w-[75%] z-[30] bg-[#f2f2f2] rounded-[20px] py-[40px] px-[20px] absolute top-[25px]">
               {slideData?.leftContent?.content || "左内容"}
             </div>
             <div className="text-[18pt] text-white bg-[#b02418] w-fit px-[20px] py-[10px] rounded-full z-[50] absolute top-[48%] left-[25%]">
-              02 | {slideData?.rightContent?.title || "右标题"}
+              02 | {slideData?.rightContent?.subtitle || "右标题"}
             </div>
             <div className="text-[14pt] font-[400] w-[75%] z-[30] bg-[#f2f2f2] rounded-[20px] py-[40px] px-[20px] absolute top-[calc(48%+25px)] left-[25%]">
               {slideData?.rightContent?.content || "右内容"}
