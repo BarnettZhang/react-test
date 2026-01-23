@@ -12,38 +12,18 @@ const CommonSlideWithTwoBlocksSchema = z.object({
   title: z.string().min(3).max(40).default("工作汇报模板").meta({
     description: "Main title of the slide",
   }),
-  leftContent: z
-    .object({
-      subtitle: z.string().min(3).max(40).meta({
-        description: "Subtitle of the left content",
-      }),
-      content: z.string().min(2).max(500).meta({
-        description: "Left content of the slide",
-      }),
-    })
-    .default({
-      subtitle: "工作汇报模板",
-      content: "左内容",
-    })
-    .meta({
-      description: "Left content of the slide",
-    }),
-  rightContent: z
-    .object({
-      subtitle: z.string().min(3).max(40).meta({
-        description: "Subtitle of the right content",
-      }),
-      content: z.string().min(2).max(500).meta({
-        description: "Right content of the slide",
-      }),
-    })
-    .default({
-      subtitle: "工作汇报模板",
-      content: "右内容",
-    })
-    .meta({
-      description: "Right content of the slide",
-    }),
+  leftSubtitle: z.string().min(3).max(40).default("工作汇报模板").meta({
+    description: "Subtitle of the left content",
+  }),
+  leftContent: z.string().min(2).max(500).default("左内容").meta({
+    description: "Left content of the slide",
+  }),
+  rightSubtitle: z.string().min(3).max(40).default("工作汇报模板").meta({
+    description: "Subtitle of the right content",
+  }),
+  rightContent: z.string().min(2).max(500).default("右内容").meta({
+    description: "Right content of the slide",
+  }),
 });
 
 export const Schema = CommonSlideWithTwoBlocksSchema;
@@ -79,13 +59,13 @@ const CommonSlideWithTwoBlocksLayout: React.FC<
                 <span className="inline-flex rounded-full bg-white text-[#b02418] px-[5px] py-[3px] mr-[5px]">
                   01
                 </span>
-                {slideData?.leftContent?.subtitle || "左标题"}
+                {slideData?.leftSubtitle || "左标题"}
               </div>
               <div
                 className="w-full text-[14pt] font-[400] z-[30] bg-[#f2f2f2] py-[40px] px-[20px] absolute top-[25px]"
                 style={{ borderBottom: "3px solid #b02418" }}
               >
-                {slideData?.leftContent?.content || "左内容"}
+                {slideData?.leftContent || "左内容"}
               </div>
             </div>
             <div className="relative w-[50%]">
@@ -93,13 +73,13 @@ const CommonSlideWithTwoBlocksLayout: React.FC<
                 <span className="inline-flex rounded-full bg-white text-[#b02418] px-[5px] py-[3px] mr-[5px]">
                   02
                 </span>
-                {slideData?.rightContent?.subtitle || "右标题"}
+                {slideData?.rightSubtitle || "右标题"}
               </div>
               <div
                 className="w-full text-[14pt] font-[400] z-[30] bg-[#f2f2f2] py-[40px] px-[20px] absolute top-[25px]"
                 style={{ borderBottom: "3px solid #b02418" }}
               >
-                {slideData?.rightContent?.content || "右内容"}
+                {slideData?.rightContent || "右内容"}
               </div>
             </div>
           </div>
@@ -121,16 +101,16 @@ const CommonSlideWithTwoBlocksLayout: React.FC<
           </div>
           <div className="absolute left-[5%] top-[15%] text-left text-black w-[90%] h-[calc(100%-70px)]">
             <div className="text-[18pt] text-white bg-[#b02418] w-fit px-[20px] py-[10px] rounded-full z-[50] absolute top-0">
-              01 ｜ {slideData?.leftContent?.subtitle || "左标题"}
+              01 ｜ {slideData?.leftSubtitle || "左标题"}
             </div>
             <div className="text-[14pt] font-[400] w-[75%] z-[30] bg-[#f2f2f2] rounded-[20px] py-[40px] px-[20px] absolute top-[25px]">
-              {slideData?.leftContent?.content || "左内容"}
+              {slideData?.leftContent || "左内容"}
             </div>
             <div className="text-[18pt] text-white bg-[#b02418] w-fit px-[20px] py-[10px] rounded-full z-[50] absolute top-[48%] left-[25%]">
-              02 | {slideData?.rightContent?.subtitle || "右标题"}
+              02 | {slideData?.rightSubtitle || "右标题"}
             </div>
             <div className="text-[14pt] font-[400] w-[75%] z-[30] bg-[#f2f2f2] rounded-[20px] py-[40px] px-[20px] absolute top-[calc(48%+25px)] left-[25%]">
-              {slideData?.rightContent?.content || "右内容"}
+              {slideData?.rightContent || "右内容"}
             </div>
           </div>
         </div>
