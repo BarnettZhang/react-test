@@ -54,8 +54,7 @@ interface CommonSlideWithFourBlocksLayoutProps {
 const CommonSlideWithFourBlocksLayout: React.FC<
   CommonSlideWithFourBlocksLayoutProps
 > = ({ data: slideData }) => {
-  // const rand = Math.random();
-  const rand = 0;
+  const rand = Math.random();
   if (rand > 0.5) {
     return (
       <>
