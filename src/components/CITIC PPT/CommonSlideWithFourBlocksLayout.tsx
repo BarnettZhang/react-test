@@ -54,7 +54,8 @@ interface CommonSlideWithFourBlocksLayoutProps {
 const CommonSlideWithFourBlocksLayout: React.FC<
   CommonSlideWithFourBlocksLayoutProps
 > = ({ data: slideData }) => {
-  const rand = Math.random();
+  // const rand = Math.random();
+  const rand = 0;
   if (rand > 0.5) {
     return (
       <>
@@ -69,7 +70,7 @@ const CommonSlideWithFourBlocksLayout: React.FC<
             {slideData?.title || "工作汇报模板"}
           </div>
           <div className="absolute left-[5%] top-[20%] text-left text-black w-[90%] flex gap-[20px]">
-            <div className="w-[25%] bg-[#f5f5f5] flex flex-col items-center px-[20px] py-[20px] gap-[30px]">
+            <div className="w-[25%] bg-[#f5f5f5] flex flex-col items-center px-[20px] py-[20px] gap-[20px]">
               <div className="text-[18pt] w-[40pt] h-[40pt] bg-[#b02418] text-white flex items-center justify-center">
                 01
               </div>
@@ -138,11 +139,9 @@ const CommonSlideWithFourBlocksLayout: React.FC<
             {slideData?.title || "工作汇报模板"}
           </div>
 
-          <div className="absolute left-[5%] top-[20%] text-left text-black w-[90%] flex gap-[20px]">
+          <div className="absolute left-[5%] top-[13%] text-left text-black w-[90%] flex gap-[20px]">
             <div className="w-[25%] flex flex-col items-center">
-              <div className="text-[80pt] text-[#d9d9d9] leading-[55pt]">
-                01
-              </div>
+              <div className="text-[80pt] text-[#d9d9d9]">01</div>
               <div className="bg-[#f5f5f5] px-[20px] py-[20px] flex flex-col items-center gap-[20px]">
                 <div className="text-[18pt] text-[#b02418]">
                   {slideData?.leftSubtitle || "左标题"}
@@ -155,9 +154,7 @@ const CommonSlideWithFourBlocksLayout: React.FC<
             </div>
 
             <div className="w-[25%] flex flex-col items-center">
-              <div className="text-[80pt] text-[#d9d9d9] leading-[55pt]">
-                02
-              </div>
+              <div className="text-[80pt] text-[#d9d9d9]">02</div>
               <div className="bg-[#f5f5f5] px-[20px] py-[20px] flex flex-col items-center gap-[20px]">
                 <div className="text-[18pt] text-[#b02418]">
                   {slideData?.midLeftSubtitle || "左中标题"}
@@ -170,9 +167,7 @@ const CommonSlideWithFourBlocksLayout: React.FC<
             </div>
 
             <div className="w-[25%] flex flex-col items-center">
-              <div className="text-[80pt] text-[#d9d9d9] leading-[55pt]">
-                03
-              </div>
+              <div className="text-[80pt] text-[#d9d9d9]">03</div>
               <div className="bg-[#f5f5f5] px-[20px] py-[20px] flex flex-col items-center gap-[20px]">
                 <div className="text-[18pt] text-[#b02418]">
                   {slideData?.midRightSubtitle || "右中标题"}
@@ -185,9 +180,7 @@ const CommonSlideWithFourBlocksLayout: React.FC<
             </div>
 
             <div className="w-[25%] flex flex-col items-center">
-              <div className="text-[80pt] text-[#d9d9d9] leading-[55pt]">
-                04
-              </div>
+              <div className="text-[80pt] text-[#d9d9d9]">04</div>
               <div className="bg-[#f5f5f5] px-[20px] py-[20px] flex flex-col items-center gap-[20px]">
                 <div className="text-[18pt] text-[#b02418]">
                   {slideData?.rightSubtitle || "右标题"}
