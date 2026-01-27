@@ -1,14 +1,15 @@
 import React from "react";
 import * as z from "zod";
 import { ChartContainer } from "@/components/ui/chart";
-import { PieChart, Pie, Cell } from "recharts";
+
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid } from "recharts";
 
 const TOP_BG_URL = "/CommonSlideTopBackgroundImage.jpg";
 
-export const layoutId = "common-content-with-pie-chart-slide";
-export const layoutName = "Common Content With Pie Chart Slide";
+export const layoutId = "common-content-with-bar-chart-slide";
+export const layoutName = "Common Content With Bar Chart Slide";
 export const layoutDescription =
-  "A clean slide layout with title, subtitle, and content with a pie chart.";
+  "A clean slide layout with title, subtitle, and content with a bar chart.";
 
 const chartConfig = {
   value: {
@@ -19,8 +20,8 @@ const chartConfig = {
   },
 };
 
-const PieChartDataSchema = z.object({
-  type: z.union([z.literal("pie")]),
+const BarChartDataSchema = z.object({
+  type: z.union([z.literal("bar")]),
   data: z
     .array(
       z.object({
@@ -32,7 +33,7 @@ const PieChartDataSchema = z.object({
     .max(5),
 });
 
-const CommonSlideWithPieChartSchema = z.object({
+const CommonSlideWithBarChartSchema = z.object({
   title: z.string().min(3).max(40).default("工作汇报模板").meta({
     description: "Main title of the slide",
   }),
@@ -42,8 +43,8 @@ const CommonSlideWithPieChartSchema = z.object({
   content: z.string().min(2).max(500).default("内容").meta({
     description: "Content of the slide",
   }),
-  chartData: z.union([PieChartDataSchema]).default({
-    type: "pie",
+  chartData: z.union([BarChartDataSchema]).default({
+    type: "bar",
     data: [
       { name: "A", value: 400 },
       { name: "B", value: 300 },
@@ -53,59 +54,40 @@ const CommonSlideWithPieChartSchema = z.object({
   }),
 });
 
-export const Schema = CommonSlideWithPieChartSchema;
+export const Schema = CommonSlideWithBarChartSchema;
 
-export type CommonSlideWithPieChartData = z.infer<
-  typeof CommonSlideWithPieChartSchema
+export type CommonSlideWithBarChartData = z.infer<
+  typeof CommonSlideWithBarChartSchema
 >;
 
-interface CommonSlideWithPieChartLayoutProps {
-  data?: Partial<CommonSlideWithPieChartData>;
+interface CommonSlideWithBarChartLayoutProps {
+  data?: Partial<CommonSlideWithBarChartData>;
 }
 
-const CommonSlideWithPieChartLayout: React.FC<
-  CommonSlideWithPieChartLayoutProps
+const CommonSlideWithBarChartLayout: React.FC<
+  CommonSlideWithBarChartLayoutProps
 > = ({ data: slideData }) => {
   const chartData = slideData?.chartData?.data || [];
-  const color = [
-    "#D7000F",
-    "#595C73",
-    "#FABA33",
-    "#684936",
-    "#D5CFAF",
-    "#2D817D",
-    "#D68A49",
-    "#E77D97",
-    "#2875E0",
-  ];
+  const color = "#B02418";
   const yAxis = "value";
 
   const renderChart = () => {
-    const renderPieLabel = (props: any) => {
-      const { name, percent, x, y, textAnchor } = props;
-      return (
-        <text x={x} y={y} textAnchor={textAnchor} fill="black" fontSize={12}>
-          {`${name} ${(percent * 100).toFixed(0)}%`}
-        </text>
-      );
+    const commonProps = {
+      data: chartData,
     };
 
     return (
-      <PieChart margin={{ top: 20, right: 30, left: 40, bottom: 60 }}>
-        <Pie
-          data={chartData}
-          cx="50%"
-          cy="50%"
-          outerRadius={150}
-          fill={color[0]}
-          dataKey={yAxis}
-          label={renderPieLabel}
-        >
-          {chartData.map((_, index) => (
-            <Cell key={`cell-${index}`} fill={color[index % 10]} />
-          ))}
-        </Pie>
-      </PieChart>
+      <BarChart {...commonProps}>
+        <CartesianGrid strokeDasharray="3 3" stroke={color} />
+        <XAxis
+          dataKey="name"
+          tick={{ fill: "var(--text-body-color,#4b5563)", fontWeight: 600 }}
+        />
+        <YAxis
+          tick={{ fill: "var(--text-body-color,#4b5563)", fontWeight: 600 }}
+        />
+        <Bar dataKey={yAxis} fill={color} />
+      </BarChart>
     );
   };
 
@@ -143,4 +125,4 @@ const CommonSlideWithPieChartLayout: React.FC<
   );
 };
 
-export default CommonSlideWithPieChartLayout;
+export default CommonSlideWithBarChartLayout;

@@ -141,7 +141,7 @@ const CommonSlideWithFourBlocksLayout: React.FC<
           <div className="absolute left-[5%] top-[13%] text-left text-black w-[90%] flex gap-[20px]">
             <div className="w-[25%] flex flex-col items-center">
               <div className="text-[80pt] text-[#d9d9d9]">01</div>
-              <div className="bg-[#f5f5f5] px-[20px] py-[20px] flex flex-col items-center gap-[20px]">
+              <div className="bg-[#f5f5f5] px-[20px] py-[20px] flex flex-col items-center gap-[20px] h-full">
                 <div className="text-[18pt] text-[#b02418]">
                   {slideData?.leftSubtitle || "左标题"}
                 </div>
@@ -154,7 +154,7 @@ const CommonSlideWithFourBlocksLayout: React.FC<
 
             <div className="w-[25%] flex flex-col items-center">
               <div className="text-[80pt] text-[#d9d9d9]">02</div>
-              <div className="bg-[#f5f5f5] px-[20px] py-[20px] flex flex-col items-center gap-[20px]">
+              <div className="bg-[#f5f5f5] px-[20px] py-[20px] flex flex-col items-center gap-[20px] h-full">
                 <div className="text-[18pt] text-[#b02418]">
                   {slideData?.midLeftSubtitle || "左中标题"}
                 </div>
@@ -167,7 +167,7 @@ const CommonSlideWithFourBlocksLayout: React.FC<
 
             <div className="w-[25%] flex flex-col items-center">
               <div className="text-[80pt] text-[#d9d9d9]">03</div>
-              <div className="bg-[#f5f5f5] px-[20px] py-[20px] flex flex-col items-center gap-[20px]">
+              <div className="bg-[#f5f5f5] px-[20px] py-[20px] flex flex-col items-center gap-[20px] h-full">
                 <div className="text-[18pt] text-[#b02418]">
                   {slideData?.midRightSubtitle || "右中标题"}
                 </div>
@@ -180,7 +180,7 @@ const CommonSlideWithFourBlocksLayout: React.FC<
 
             <div className="w-[25%] flex flex-col items-center">
               <div className="text-[80pt] text-[#d9d9d9]">04</div>
-              <div className="bg-[#f5f5f5] px-[20px] py-[20px] flex flex-col items-center gap-[20px]">
+              <div className="bg-[#f5f5f5] px-[20px] py-[20px] flex flex-col items-center gap-[20px] h-full">
                 <div className="text-[18pt] text-[#b02418]">
                   {slideData?.rightSubtitle || "右标题"}
                 </div>

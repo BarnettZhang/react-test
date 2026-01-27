@@ -54,7 +54,7 @@ const CommonSlideWithTwoBlocksLayout: React.FC<
             <div className="absolute left-[5%] top-[3%] text-[24pt] font-bold text-left text-black">
               {slideData?.title || "工作汇报模板"}
             </div>
-            <div className="absolute left-[5%] top-[25%] text-left text-black w-[90%] h-[calc(100%-70px)] flex gap-[20px]">
+            <div className="absolute left-[5%] top-[25%] text-left text-black w-[90%] flex gap-[20px]">
               <div className="relative w-[50%]">
                 <div className="text-[18pt] text-white bg-[#b02418] w-full px-[20px] py-[10px] z-[50]">
                   <span className="inline-flex bg-white text-[#b02418] px-[5px] py-[3px] mr-[5px]">
@@ -62,7 +62,7 @@ const CommonSlideWithTwoBlocksLayout: React.FC<
                   </span>
                   {slideData?.leftSubtitle || "左标题"}
                 </div>
-                <div className="w-full text-[14pt] font-[400] z-[30] bg-[#f2f2f2] py-[40px] px-[20px]">
+                <div className="w-full text-[14pt] font-[400] z-[30] bg-[#f2f2f2] py-[40px] px-[20px] h-full">
                   {slideData?.leftContent || "左内容"}
                 </div>
                 <div className="w-full h-[3px] bg-[#b02418]"></div>
@@ -74,7 +74,7 @@ const CommonSlideWithTwoBlocksLayout: React.FC<
                   </span>
                   {slideData?.rightSubtitle || "右标题"}
                 </div>
-                <div className="w-full text-[14pt] font-[400] z-[30] bg-[#f2f2f2] py-[40px] px-[20px]">
+                <div className="w-full text-[14pt] font-[400] z-[30] bg-[#f2f2f2] py-[40px] px-[20px] h-full">
                   {slideData?.rightContent || "右内容"}
                 </div>
                 <div className="w-full h-[3px] bg-[#b02418]"></div>
