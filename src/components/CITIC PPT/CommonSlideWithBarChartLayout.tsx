@@ -68,7 +68,7 @@ const CommonSlideWithBarChartLayout: React.FC<
   CommonSlideWithBarChartLayoutProps
 > = ({ data: slideData }) => {
   const chartData = slideData?.chartData?.data || [];
-  const color = "#B02418";
+  const color = "#D7000F";
   const yAxis = "value";
 
   const renderChart = () => {
