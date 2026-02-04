@@ -20,7 +20,7 @@ const commonSlideSchema = z.object({
     .min(2)
     .max(500)
     .default(
-      "一是月末，我行全口径授信业务总量万亿元，比上月增加亿元。其中表内贷款增长乏力，比上月增加亿元。二是不良贷款比上月双升，问题贷款和逾期贷款比上月继续双降。月末不良余额亿，比上月增加亿，不良率%，比上月上升个百分点。问题贷款余额亿元，比上月下降亿元。逾期贷款余额亿元，比上月下降亿元。"
+      "一是月末，我行全口径授信业务总量万亿元，比上月增加亿元。其中表内贷款增长乏力，比上月增加亿元。二是不良贷款比上月双升，问题贷款和逾期贷款比上月继续双降。月末不良余额亿，比上月增加亿，不良率%，比上月上升个百分点。问题贷款余额亿元，比上月下降亿元。逾期贷款余额亿元，比上月下降亿元。",
     )
     .meta({
       description: "Content of the slide",
@@ -38,29 +38,57 @@ interface CommonSlideLayoutProps {
 const CommonSlideLayout: React.FC<CommonSlideLayoutProps> = ({
   data: slideData,
 }) => {
-  return (
-    <>
-      <div className='relative w-full rounded-sm max-w-[1280px] shadow-lg max-h-[720px] aspect-video bg-cover bg-white bg-center z-20 mx-auto overflow-hidden font-["楷体\_GB2312","楷体","Kai","DFKai-SB","serif"]'>
-        <img
-          className="absolute top-0 left-0 w-full"
-          src={TOP_BG_URL}
-          alt="CommonSlideTopBackgroundImage"
-        />
-        {/* Title */}
-        <div className="absolute left-[5%] top-[3%] text-[24pt] font-bold text-left text-black">
-          {slideData?.title || "工作汇报模板"}
-        </div>
-        <div className="absolute left-[7%] top-[25%] text-left text-black w-[84%]">
-          <div className="text-[20pt] font-bold">
-            {slideData?.subtitle || "子标题"}
+  const rand = Math.random();
+  if (rand > 0.5) {
+    return (
+      <>
+        <div className='relative w-full rounded-sm max-w-[1280px] shadow-lg max-h-[720px] aspect-video bg-cover bg-white bg-center z-20 mx-auto overflow-hidden font-["楷体","Kai","DFKai-SB","serif"]'>
+          <img
+            className="absolute top-0 left-0 w-full"
+            src={TOP_BG_URL}
+            alt="CommonSlideTopBackgroundImage"
+          />
+          {/* Title */}
+          <div className="absolute left-[5%] top-[3%] text-[24pt] font-bold text-left text-black">
+            {slideData?.title || "工作汇报模板"}
           </div>
-          <div className="text-[14pt] font-[400] mt-[50px]">
-            {slideData?.content || "内容"}
+          <div className="absolute left-[7%] top-[25%] text-left text-black w-[84%]">
+            <div className="text-[20pt] font-bold px-[20px] py-[10px] bg-[#c52922] text-[#fff] w-fit">
+              {slideData?.subtitle || "子标题"}
+            </div>
+            <div className="text-[14pt] font-[400] mt-[20px]">
+              {slideData?.content || "内容"}
+            </div>
           </div>
         </div>
-      </div>
-    </>
-  );
+      </>
+    );
+  } else {
+    return (
+      <>
+        <div className='relative w-full rounded-sm max-w-[1280px] shadow-lg max-h-[720px] aspect-video bg-cover bg-white bg-center z-20 mx-auto overflow-hidden font-["楷体","Kai","DFKai-SB","serif"]'>
+          <img
+            className="absolute top-0 left-0 w-full"
+            src={TOP_BG_URL}
+            alt="CommonSlideTopBackgroundImage"
+          />
+          {/* Title */}
+          <div className="absolute left-[5%] top-[3%] text-[24pt] font-bold text-left text-black">
+            {slideData?.title || "工作汇报模板"}
+          </div>
+          <div className="absolute left-[7%] top-[25%] text-left text-black w-[84%]">
+            <div className="text-[20pt] font-bold text-[#c52922]">
+              {slideData?.subtitle || "子标题"}
+            </div>
+            <div className="bg-[#c52922] w-full h-[4px] my-[20px]"></div>
+            <div className="text-[14pt] font-[400]">
+              {slideData?.content || "内容"}
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
 };
 
 export default CommonSlideLayout;
